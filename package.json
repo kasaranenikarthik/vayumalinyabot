@@ -1,0 +1,33 @@
+{
+  "name": "vayumalinyabot",
+  "version": "1.0.0",
+  "description": "A telegram bot to request pollution data",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "serve": "nodemon ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "9.1.0",
+    "npm": "5.5.1"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "pollution",
+    "location-based"
+  ],
+  "author": "Gopa Vasanth",
+  "license": "ISC",
+  "homepage": "https://github.com/gopavasanth/vayumalinyabot#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "moment": "^2.19.3",
+    "node-telegram-bot-api": "^0.29.0",
+    "superagent": "^3.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
