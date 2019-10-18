@@ -91,7 +91,6 @@ function sendMeasurements(results) {
 		}
 		text += `_(${new Date(measurements[param].lastUpdated).toLocaleString()} in ${measurements[param].distance} km)_`
 	}
-	text += '\n\n Hopefully you will try to decrease air pollution'
 	console.log(text)
 }
 
