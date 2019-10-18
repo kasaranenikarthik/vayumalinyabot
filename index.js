@@ -19,12 +19,12 @@ const bot = new TelegramBot(TOKEN, {polling: true})
 console.log("Hook Established !!")
 
 const limits = {
-	pm25: {low: 10, high: 25, unit: ' µg/m³'},
-	pm10: {low: 20, high: 50, unit: ' µg/m³'},
-	o3: {low: 100, high: 300, unit: ' µg/m³'},
-	no2: {low: 40, high: 200, unit: ' µg/m³'},
-	so2: {low: 20, high: 400, unit: ' µg/m³'},
-	co: {low: 9999, high: 9999, unit: ' µg/m³'}
+	pm25: {low: 10, high: 25, unit: 'µg/m³'},
+	pm10: {low: 20, high: 50, unit: 'µg/m³'},
+	o3: {low: 100, high: 300, unit: 'µg/m³'},
+	no2: {low: 40, high: 200, unit: 'µg/m³'},
+	so2: {low: 20, high: 400, unit: 'µg/m³'},
+	co: {low: 9999, high: 9999, unit: 'µg/m³'}
 }
 
 const commands = {
@@ -36,7 +36,7 @@ const commands = {
 		sendMessage('If you send me your current location, I\'ll see if I can find any data on air pollution in your area. You can also send me the name of a place or an address that you are interested in and I\'ll see if I can find any data for you. Data comes from https://openaq.org/, a great platform for open air quality data. Recommended levels taken from WHO guideline http://www.who.int/. \n\n Please also try these commands /help /owner')
 	},
 	owner(params) {
-		sendMessage('This bot is built with lots of ♥  by Gopa Vasanth, Naga Sai, Karthik, Vamsi Krishna, Marri Venkat in the mentor ship of Santhi Miss')
+		sendMessage('Built with lots of ♥  by Gopa Vasanth, Naga Sai, Karthik, Vamsi Krishna, Marri Venkat in the mentorship of Santhi Miss ❣️')
 	}
 }
 
@@ -83,14 +83,16 @@ function sendMeasurements(results) {
 	}, {})
 	let text = ``
 	for(let param in measurements) {
-		text += `
-*${param}* ${Math.round(measurements[param].value * 100) / 100} ${measurements[param].unit} `
+		text += `*${param}* ${Math.round(measurements[param].value * 100) / 100} ${measurements[param].unit} `
+		console.log(limits[param] + " " + limits[param].unit + " " + measurements[param].unit)				
+		console.log(limits[param] && limits[param].unit === measurements[param].unit)		
 		if(limits[param] && limits[param].unit === measurements[param].unit) {
-			text += measurements[param].value > limits[param].high ? '😫 ' : measurements[param].value > limits[param].low ? '😐 ' : '🙂 '
+			text += measurements[param].value > limits[param].high ? '😫 	' : measurements[param].value > limits[param].low ? '😐 ' : '🙂 '
 		}
 		text += `_(${new Date(measurements[param].lastUpdated).toLocaleString()} in ${measurements[param].distance} km)_`
 	}
-	sendMessage(text)
+	text += '\n\n Hopefully you will try to decrease air pollution'
+	console.log(text)
 }
 
 function sendAnswer(location) {
