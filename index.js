@@ -36,7 +36,7 @@ const commands = {
 		sendMessage('If you send me your current location, I\'ll see if I can find any data on air pollution in your area. You can also send me the name of a place or an address that you are interested in and I\'ll see if I can find any data for you. Data comes from https://openaq.org/, a great platform for open air quality data. Recommended levels taken from WHO guideline http://www.who.int/. \n\n Please also try these commands /help /owner')
 	},
 	owner(params) {
-		sendMessage('This bot is built with lots of ♥  by Gopa Vasanth, Naga Sai, Karthik, Vamsi Krishna, Marri Venkat')
+		sendMessage('This bot is built with lots of ♥  by Gopa Vasanth, Naga Sai, Karthik, Vamsi Krishna, Marri Venkat in the mentor ship of Santhi Miss')
 	}
 }
 
