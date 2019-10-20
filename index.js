@@ -9,7 +9,7 @@ const options = {
 //	},
 }
 
-const url = 't.me/vayuuuumalinyabot'
+const url = 't.me/vaaaayubot'
 // const bot = new TelegramBot(TOKEN, options)
 
 // bot.setWebHook(`${url}/bot${TOKEN}`)
