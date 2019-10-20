@@ -12,7 +12,7 @@ const options = {
 const url = 't.me/vaaaayubot'
 // const bot = new TelegramBot(TOKEN, options)
 
- bot.setWebHook(`${url}/bot${TOKEN}`)
+ //bot.setWebHook(`${url}/bot${TOKEN}`)
 
 const bot = new TelegramBot(TOKEN, {polling: true})
 
